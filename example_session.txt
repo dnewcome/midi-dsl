@@ -1,0 +1,41 @@
+# MIDI Pattern DSL - Example Session
+
+# Set up defaults
+vel 80
+len 0.25
+tempo 120
+
+# Create a simple melody
+pat melody 4 c4 e4 g4 c5
+
+# Create a bass line
+pat bass 4 c3 c3 f3 g3
+
+# Show what we created
+list
+show melody
+
+# Modify the melody
+mod melody trans 12      # transpose up an octave
+mod melody rev           # reverse it
+
+# Create a quick sequence
+seq 60 64 67 72
+
+# Play patterns
+play melody
+play bass
+
+# Create a faster pattern
+vel 100
+len 0.125
+pat fast 2 c5 d5 e5 f5 g5 a5 b5 c6
+
+# Double its speed
+mod fast double
+
+# Show all patterns
+list
+
+# Stop everything
+stop
